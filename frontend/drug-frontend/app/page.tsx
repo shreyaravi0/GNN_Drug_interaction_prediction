@@ -48,7 +48,7 @@ export default function Home() {
     setResult(null);
 
     try {
-      const response = await fetch("http://localhost:8000/predict", {
+      const response = await fetch("https://gnn-drug-interaction-prediction.onrender.com/predict", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ smiles1, smiles2 }),
