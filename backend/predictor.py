@@ -10,7 +10,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 model = InteractionPredictor(hidden_channels=128)
 import os
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 model_path = os.path.join(BASE_DIR, "gnn_model.pth")
 checkpoint = torch.load(model_path, map_location=device)
 model.load_state_dict(checkpoint["model_state_dict"])
